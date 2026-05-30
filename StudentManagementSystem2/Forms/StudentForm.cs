@@ -7,6 +7,7 @@ namespace StudentManagementSystem2.Forms
 {
     public partial class StudentForm : Form
     {
+        // Stores selected student ID for update/delete
         private int selectedStudentID = 0;
 
         public StudentForm()
@@ -14,18 +15,22 @@ namespace StudentManagementSystem2.Forms
             InitializeComponent();
         }
 
+        // Load students when form opens
         private void StudentForm_Load(object sender, EventArgs e)
         {
             LoadStudents();
         }
 
+        // Fetch all active students from database
         private void LoadStudents()
         {
             try
             {
-                string query = "SELECT StudentID, FullName, RollNumber, Email, Phone, Gender FROM Students WHERE IsActive=1";
+                string query = "SELECT StudentID, FullName, RollNumber, Email, Phone, Gender, Address FROM Students WHERE IsActive=1";
                 DataTable dt = DatabaseHelper.ExecuteQuery(query);
                 dgvStudents.DataSource = dt;
+
+                // Hide StudentID column from view
                 dgvStudents.Columns["StudentID"].Visible = false;
             }
             catch (Exception ex)
@@ -35,8 +40,10 @@ namespace StudentManagementSystem2.Forms
             }
         }
 
+        // Add new student to database
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            // Validate required fields
             if (string.IsNullOrEmpty(txtFullName.Text) || string.IsNullOrEmpty(txtRollNumber.Text))
             {
                 MessageBox.Show("Full Name and Roll Number are required!",
@@ -72,6 +79,7 @@ namespace StudentManagementSystem2.Forms
             }
         }
 
+        // Update selected student record
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (selectedStudentID == 0)
@@ -111,6 +119,7 @@ namespace StudentManagementSystem2.Forms
             }
         }
 
+        // Soft delete - marks student as inactive
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (selectedStudentID == 0)
@@ -120,6 +129,7 @@ namespace StudentManagementSystem2.Forms
                 return;
             }
 
+            // Confirm before deleting
             DialogResult result = MessageBox.Show("Are you sure you want to delete this student?",
                 "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -127,6 +137,7 @@ namespace StudentManagementSystem2.Forms
             {
                 try
                 {
+                    // Soft delete - set IsActive to 0
                     string query = "UPDATE Students SET IsActive=0 WHERE StudentID=@id";
                     MySql.Data.MySqlClient.MySqlParameter[] parameters = {
                         new MySql.Data.MySqlClient.MySqlParameter("@id", selectedStudentID)
@@ -147,12 +158,13 @@ namespace StudentManagementSystem2.Forms
             }
         }
 
+        // Search students by name or roll number
         private void btnSearch_Click(object sender, EventArgs e)
         {
             try
             {
                 string searchText = txtSearch.Text.Trim();
-                string query = @"SELECT StudentID, FullName, RollNumber, Email, Phone, Gender 
+                string query = @"SELECT StudentID, FullName, RollNumber, Email, Phone, Gender, Address 
                                 FROM Students WHERE IsActive=1 AND 
                                 (FullName LIKE @search OR RollNumber LIKE @search)";
 
@@ -171,6 +183,7 @@ namespace StudentManagementSystem2.Forms
             }
         }
 
+        // Fill form fields when row is clicked in DataGridView
         private void dgvStudents_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -182,14 +195,17 @@ namespace StudentManagementSystem2.Forms
                 txtEmail.Text = row.Cells["Email"].Value?.ToString();
                 txtPhone.Text = row.Cells["Phone"].Value?.ToString();
                 cmbGender.Text = row.Cells["Gender"].Value?.ToString();
+                txtAddress.Text = row.Cells["Address"].Value?.ToString();
             }
         }
 
+        // Clear all input fields
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearFields();
         }
 
+        // Reset all form fields and selection
         private void ClearFields()
         {
             selectedStudentID = 0;
