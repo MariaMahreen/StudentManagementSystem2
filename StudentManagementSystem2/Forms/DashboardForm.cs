@@ -51,8 +51,8 @@ namespace StudentManagementSystem2.Forms
         private void btnStudents_Click(object sender, EventArgs e)
         {
             // TODO: Uncomment when StudentForm is created
-            // StudentForm sf = new StudentForm();
-            // sf.Show();
+             StudentForm sf = new StudentForm();
+             sf.Show();
         }
 
         // Open Courses form
