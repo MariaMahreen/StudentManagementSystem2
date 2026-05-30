@@ -6,11 +6,11 @@ A desktop application built with C# Windows Forms and MySQL for managing student
 
 
 
-\*\*Developer:\*\* Maria Mahreen (2024-AG-6579)  
+Developer: Maria Mahreen (2024-AG-6579)  
 
-\*\*Course:\*\* Visual Programming (CS-412)  
+Course:Visual Programming (CS-412)  
 
-\*\*University:\*\* University of Agriculture Faisalabad  
+University: University of Agriculture Faisalabad  
 
 
 
@@ -80,9 +80,9 @@ A desktop application built with C# Windows Forms and MySQL for managing student
 
 Default login credentials:
 
-\- \*\*Username:\*\* admin
+\-Username: admin
 
-\- \*\*Password:\*\* admin123
+\- Password: admin123
 
 
 
