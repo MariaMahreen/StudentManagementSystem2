@@ -1,0 +1,7 @@
+GitHub Repository Link:
+https://github.com/MariaMahreen/StudentManagementSystem2
+
+Developer: Maria Mahreen
+AG: 2024-AG-6579
+Course: Visual Programming (CS-412)
+University: University of Agriculture Faisalabad
