@@ -59,8 +59,8 @@ namespace StudentManagementSystem2.Forms
         private void btnCourses_Click(object sender, EventArgs e)
         {
             // TODO: Uncomment when CourseForm is created
-            // CourseForm cf = new CourseForm();
-            // cf.Show();
+             CourseForm cf = new CourseForm();
+             cf.Show();
         }
 
         // Open Enrollments form
