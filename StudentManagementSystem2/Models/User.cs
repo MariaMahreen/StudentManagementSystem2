@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace StudentManagementSystem2.Models
+﻿namespace StudentManagementSystem2.Models
 {
-    internal class User
+    // Model class representing a User for login
+    public class User
     {
+        public int UserID { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string Role { get; set; }
+        public bool IsActive { get; set; }
     }
 }
