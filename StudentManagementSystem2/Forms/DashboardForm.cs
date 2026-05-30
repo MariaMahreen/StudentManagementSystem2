@@ -12,9 +12,11 @@ namespace StudentManagementSystem2.Forms
             InitializeComponent();
             // Show logged in username
             lblWelcome.Text = "Welcome, " + LoginForm.LoggedInUser;
+            // Load statistics when form opens
+            LoadStatistics();
         }
 
-        // Load dashboard statistics from database
+        // Load dashboard when form opens
         private void DashboardForm_Load(object sender, EventArgs e)
         {
             LoadStatistics();
@@ -50,25 +52,22 @@ namespace StudentManagementSystem2.Forms
         // Open Students form
         private void btnStudents_Click(object sender, EventArgs e)
         {
-            // TODO: Uncomment when StudentForm is created
-             StudentForm sf = new StudentForm();
-             sf.Show();
+            StudentForm sf = new StudentForm();
+            sf.Show();
         }
 
         // Open Courses form
         private void btnCourses_Click(object sender, EventArgs e)
         {
-            // TODO: Uncomment when CourseForm is created
-             CourseForm cf = new CourseForm();
-             cf.Show();
+            CourseForm cf = new CourseForm();
+            cf.Show();
         }
 
         // Open Enrollments form
         private void btnEnrollments_Click(object sender, EventArgs e)
         {
-            // TODO: Uncomment when EnrollmentForm is created
-             EnrollmentForm ef = new EnrollmentForm();
-             ef.Show();
+            EnrollmentForm ef = new EnrollmentForm();
+            ef.Show();
         }
 
         // Logout - go back to login

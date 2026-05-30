@@ -196,7 +196,7 @@ namespace StudentManagementSystem2.Forms
             }
         }
 
-        // Search enrollments by student name
+        // Search enrollments by student or course name
         private void btnSearch_Click(object sender, EventArgs e)
         {
             try
