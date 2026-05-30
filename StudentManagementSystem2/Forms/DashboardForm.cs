@@ -67,8 +67,8 @@ namespace StudentManagementSystem2.Forms
         private void btnEnrollments_Click(object sender, EventArgs e)
         {
             // TODO: Uncomment when EnrollmentForm is created
-            // EnrollmentForm ef = new EnrollmentForm();
-            // ef.Show();
+             EnrollmentForm ef = new EnrollmentForm();
+             ef.Show();
         }
 
         // Logout - go back to login
