@@ -100,12 +100,12 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvStudents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvStudents.ColumnHeadersHeight = 34;
-            this.dgvStudents.Location = new System.Drawing.Point(-9, 70);
+            this.dgvStudents.Location = new System.Drawing.Point(-9, 66);
             this.dgvStudents.Name = "dgvStudents";
             this.dgvStudents.ReadOnly = true;
             this.dgvStudents.RowHeadersWidth = 62;
             this.dgvStudents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStudents.Size = new System.Drawing.Size(720, 500);
+            this.dgvStudents.Size = new System.Drawing.Size(950, 594);
             this.dgvStudents.TabIndex = 1;
             this.dgvStudents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudents_CellClick);
             // 
@@ -128,9 +128,9 @@
             this.pnlForm.Controls.Add(this.btnUpdate);
             this.pnlForm.Controls.Add(this.btnDelete);
             this.pnlForm.Controls.Add(this.btnClear);
-            this.pnlForm.Location = new System.Drawing.Point(717, 70);
+            this.pnlForm.Location = new System.Drawing.Point(947, 70);
             this.pnlForm.Name = "pnlForm";
-            this.pnlForm.Size = new System.Drawing.Size(373, 500);
+            this.pnlForm.Size = new System.Drawing.Size(394, 500);
             this.pnlForm.TabIndex = 2;
             // 
             // lblFullName
@@ -309,7 +309,7 @@
             // 
             // StudentForm
             // 
-            this.ClientSize = new System.Drawing.Size(1100, 665);
+            this.ClientSize = new System.Drawing.Size(1353, 665);
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.dgvStudents);
             this.Controls.Add(this.pnlForm);
