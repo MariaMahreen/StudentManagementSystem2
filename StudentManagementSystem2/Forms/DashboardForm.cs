@@ -49,6 +49,14 @@ namespace StudentManagementSystem2.Forms
             }
         }
 
+        // Refresh dashboard statistics
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadStatistics();
+            MessageBox.Show("Dashboard refreshed!",
+                "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         // Open Students form
         private void btnStudents_Click(object sender, EventArgs e)
         {
